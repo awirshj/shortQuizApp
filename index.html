@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiz App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS FILES -->
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/queries.css" />
+		<!-- JS -->
+		<script defer src="js/script.js"></script>
+	</head>
+	<body>
+		<main>
+			<p class="title__game"><span>Short Answer</span> Quiz</p>
+			<!-- MORE CLASSES: container--notStart 
+			container--timer-->
+			<div class="container">
+				<!--  MORE DYNAMIC CLASSES: container__inner--topics container__inner--center
+        container__inner--notStart -->
+				<div class="container__inner container__inner--center">
+					<!-- btn start -->
+					<div class="btn btn__start"><a href="#">Start Game</a></div>
+					<div class="start__timer hidden">
+						<p>...3</p>
+					</div>
+					<ul class="topics__list hidden">
+						<!-- INSERT DATA FORM JS -->
+					</ul>
+					<div class="quiz__header quiz hidden">
+						<div class="quiz__header--topic">Programming</div>
+						<div class="quiz__header--number"><span>1</span> of 10</div>
+					</div>
+					<div class="quiz__time--container quiz hidden">
+						<span class="quiz__time--text">00:30</span>
+					</div>
+					<div class="quiz__question quiz hidden">
+						<p>Hyper Text Markup Language Stands For?</p>
+					</div>
+					<div class="quiz__options--container quiz hidden">
+						<ul class="quiz__options--list">
+							<!-- MORE CLASS: choose__false , correct-answer -->
+							<li id="0op">
+								<div class="btn quiz__option">
+									<a href="#">A. jQuery</a>
+								</div>
+							</li>
+							<li id="1op">
+								<div class="btn quiz__option">
+									<a href="#">B. XHTML</a>
+								</div>
+							</li>
+							<li id="2op">
+								<div class="btn quiz__option">
+									<a href="#">C. CSS</a>
+								</div>
+							</li>
+							<li id="3op">
+								<div class="btn quiz__option">
+									<a href="#">D. HTML</a>
+								</div>
+							</li>
+							<li class="quiz__hint" data-num="0">
+								<div><a href="#">Remove One Option</a></div>
+							</li>
+							<li class="quiz__hint" data-num="1">
+								<div><a href="#">Hint</a></div>
+							</li>
+						</ul>
+					</div>
+					<div class="quiz__more quiz hidden">
+						<div class="designer"><span>designer : userName</span></div>
+						<div class="skip"><a href="#">SKIP</a></div>
+					</div>
+					<div>
+						<p class="score hidden">Score: <span>0</span></p>
+						<div class="btn btn__start btn__end hidden">
+							<a href="#">Play Again</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img
+				class="img__quiz hidden"
+				src="img/img__quiz.png"
+				alt="shrek are thinking :D"
+			/>
+			<img
+				class="img__start"
+				src="img/img__start.png"
+				alt="shrek and his friends"
+			/>
+		</main>
+	</body>
+</html>

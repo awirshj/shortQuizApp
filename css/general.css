@@ -1,0 +1,148 @@
+/* GENERALS */
+:root {
+	/* order= darker */
+	--color-primary: #94d82d;
+	--color-primary-darker-0: #76ad24a2;
+	--color-primary-darker-1: #59821b;
+	--color-primary-darker-2: #3b5612;
+	--color-primary-opacity-0: #94d82da8;
+	--color-primary-opacity-1: #94d82d1e;
+	--color-primary-opacity-2: #94d82d3a;
+	--color-primary-opacity-3: #5d881c71;
+	--color-tertiary-opacity: #fda9a986;
+	--color-tertiary: #e14a4a;
+	--color-secondary: #008080;
+	--color-secondary-opacity: #b3d9d956;
+	--color-secondary-darker: #0b2e59;
+	--color-text: #3d3d3d;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	font-weight: 400;
+	text-rendering: optimizeSpeed;
+	font-size: 1.6rem;
+	line-height: 1.75;
+	font-family: "Comic Neue", cursive, sans-serif;
+	background-color: #fff;
+	overflow-y: hidden;
+}
+a {
+	text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+/* BTN  */
+.btn {
+	/* CENTER content*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s;
+	/* COLORS */
+	border-radius: 4px;
+	box-shadow: inset 0 0 0 1px var(--color-primary-opacity-2);
+	background-color: var(--color-primary-opacity-1);
+}
+.container:hover .btn {
+	box-shadow: inset 0 0 0 1px var(--color-primary);
+	background-color: var(--color-primary-opacity-2);
+}
+.btn a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.4rem 0.8rem;
+	transition: all 250ms;
+	color: var(--color-primary-darker-1);
+}
+.btn:hover a {
+	color: var(--color-primary-darker-2);
+}
+.btn:hover {
+	background-color: #94d82d5e !important;
+	box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+		rgba(17, 17, 26, 0.1) 0px 0px 8px, inset 0 0 0 1px var(--color-primary) !important;
+}
+
+/* CONTAINER box*/
+.container {
+	z-index: 1;
+	position: absolute;
+	top: 53vh;
+	left: 10vw;
+	height: 75vh;
+
+	max-height: 600px;
+	width: 48vw;
+	transform: translateY(-50%);
+	/* NICE HOVER EFFECT ON BORDER */
+
+	--g: 5px; /* the gap */
+	--b: 4px; /* border thickness*/
+	--c: var(--color-primary); /* the color */
+
+	padding: calc(var(--g) + var(--b));
+	--_c: #0000 0 25%, var(--c) 0 50%;
+	--_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+	--_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+	background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+		var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+	background-size: 200% var(--b), var(--b) 200%;
+	transition: all 300ms;
+}
+
+.container:hover {
+	--_p: 75%;
+}
+/* nested containr is necessary for hover effect */
+.container__inner {
+	height: 100%;
+	width: 100%;
+	background-color: var(--color-primary-opacity-1);
+}
+/* scroll */
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--color-primary-opacity-1);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary-darker-0);
+	border-radius: 15px;
+}
+/* HIDDEN STATEs */
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+	position: absolute;
+	transform: translateY(80px);
+	transition: all 0s !important;
+	filter: blur(20px);
+}
+/* Maintains position */
+.hidden__v2 {
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+}

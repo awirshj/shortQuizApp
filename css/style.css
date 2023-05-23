@@ -1,0 +1,274 @@
+/* {TITLE} */
+.title__game {
+	font-size: 3.2rem;
+	position: fixed;
+	top: 12px;
+	/* left: 100px; */
+	left: 24.5vw;
+	color: var(--color-primary-darker-1);
+}
+.title__game > span {
+	background: linear-gradient(to top right, #94d82db7, #b3e4632d);
+	padding: 0 0.4rem;
+	border-radius: 5px;
+}
+/* 	{CONTAINER} */
+
+.container--notStart {
+	--_p: 75%;
+	height: 100%;
+}
+.container__inner--topics {
+	/* SCROLL FOR TOPICS */
+	flex-shrink: 0;
+	overflow-y: scroll;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container__inner--notStart {
+	flex-shrink: 0;
+	overflow-y: scroll;
+}
+
+.container__inner--center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container--timer.container {
+	--g: 5px; /* the gap */
+	--b: 6px; /* border thickness*/
+	--c: var(--color-tertiary); /* the color */
+	--_p: initial !important;
+}
+
+/* btn--start */
+.btn__start a {
+	font-weight: 700;
+	font-size: 3.6rem;
+}
+/* {img} */
+
+.img__start {
+	position: fixed;
+	right: 0;
+	top: 50vh;
+	transform: translateY(-48%);
+	height: 90vh;
+	width: auto;
+	transition: all 0.3s ease-in;
+}
+.img__quiz {
+	position: fixed;
+	right: -1vh;
+	top: 49vh;
+	transform: translateY(-52%);
+	height: 85vh;
+	z-index: -1;
+	transition: all 0.4s ease-in-out;
+}
+/* {TOPICs} */
+.topics__list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	padding: 1.6rem;
+	list-style: none;
+	row-gap: 1.6rem;
+	column-gap: 2.4rem;
+	height: 90%;
+	width: 90%;
+	transition: all 0.5s ease-in-out;
+}
+.btn__topic a {
+	font-size: inherit;
+	font-weight: 600;
+}
+.btn__topic:hover {
+	transform: scale(1.1);
+}
+.topic {
+	box-shadow: inset 0 0 0 1px #94d82d50;
+	background-color: #94d82d13;
+}
+/* {START QUIZ, SHOW QUESTIONS} */
+.quiz__header {
+	display: flex;
+	justify-content: space-between;
+	padding: 2.4rem 1.6rem 0 1.6rem;
+	margin-bottom: 1rem;
+	color: var(--color-text);
+}
+.quiz__time--container {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+.quiz__time--text {
+	padding: 1.6rem 4.8rem;
+	border-radius: 9px;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: var(--color-text);
+	color: var(--color-primary-darker-2);
+	background-color: var(--color-primary-opacity-0);
+}
+.quiz__question {
+	text-align: center;
+	margin: 0 3.2rem;
+	padding: 0.8rem 0;
+	font-size: 2.4rem;
+	border-radius: 9px;
+	margin-bottom: 3.2rem;
+	background-color: #76ad24;
+}
+.quiz__question p {
+	line-height: 1.3;
+	font-weight: 700;
+	color: #fff;
+}
+/* OPTIONS STYLE */
+.quiz__options--container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.quiz__options--list {
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 2.8rem;
+	row-gap: 1.6rem;
+	margin: 0 1.6rem;
+	width: 70%;
+	padding-bottom: 1.6rem;
+	margin-bottom: 0.8rem;
+	border-bottom: 1px solid var(--color-secondary-opacity);
+}
+.quiz__option {
+	padding: 0.8rem 1.6rem;
+	font-size: 2rem;
+}
+.quiz__option:hover {
+	transform: scale(1.1);
+}
+/* choose false */
+.choose__false {
+	border: 1px solid var(--color-tertiary);
+	box-shadow: inset 0 0 0 1px var(--color-tertiary) !important;
+	background-color: var(--color-tertiary-opacity) !important;
+}
+.choose__false a {
+	color: var(--color-tertiary) !important;
+}
+/* correct answer */
+.btn.correct-answer {
+	justify-content: start !important;
+	background-color: #94d82d5e !important;
+	box-shadow: rgba(17, 17, 26, 0.123) 0px 1px 0px,
+		rgba(17, 17, 26, 0.171) 0px 0px 8px, inset 0 0 0 1px var(--color-primary) !important;
+	transform: scale(1.1);
+}
+.correct-icon {
+	height: 2.8rem;
+	width: 2.8rem;
+	position: fixed;
+	top: 50%;
+	right: 6px;
+	transform: translateY(-50%);
+	stroke: var(--color-primary);
+}
+.correct-answer a {
+	color: var(--color-primary-darker-2) !important;
+}
+/* {HINTS STYLE} */
+.quiz__hint a {
+	text-decoration: none;
+	display: inline-block;
+	font-weight: 400;
+	color: var(--color-secondary-darker);
+}
+.quiz {
+	transition: opacity 0.7s, visibility 0.7s ease-in-out;
+}
+.quiz__hint {
+	text-align: center;
+	margin-top: 2.4rem;
+	justify-self: center;
+	align-self: center;
+	transition: all 0.3s ease-in-out;
+	/*  NICE DYNAMIC BORDER FOR HOVER */
+	--g: 1px; /* the gap */
+	--b: 2px; /* border thickness*/
+	--c: var(--color-secondary-darker); /* the color */
+
+	padding: calc(var(--g) + var(--b));
+	--_c: #0000 0 25%, var(--c) 0 50%;
+	--_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+	--_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+	background: var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+		var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+	background-size: 200% var(--b), var(--b) 200%;
+	--_p: initial;
+	cursor: pointer;
+}
+.quiz__hint:hover {
+	--_p: 75%;
+	transform: scale(1.07);
+}
+.quiz__hint div {
+	padding: 0.8rem 1.6rem;
+	border-radius: 1px;
+	background-color: var(--color-secondary-opacity);
+	border: 0.3px solid var(--color-secondary);
+}
+/* MORE: skip, designer of question  */
+.quiz__more {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1.6rem 0.8rem 1.6rem;
+	color: var(--color-text);
+	/* fixed position on container */
+}
+.skip a {
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 11px;
+	font-weight: 600;
+	padding: 0.8rem 1.6rem;
+	transition: all 300ms;
+	border: 1px double var(--color-tertiary);
+	color: var(--color-tertiary);
+	background-color: var(--color-tertiary-opacity);
+}
+.skip a:hover {
+	transform: scale(1.08);
+}
+/* {end: result} */
+.score {
+	display: block;
+	font-size: 3.2rem;
+	font-weight: 600;
+	margin-bottom: 4.8rem;
+	align-self: center;
+	text-align: center;
+	color: var(--color-primary-darker-2);
+}
+.btn__start.btn__end {
+	display: grid;
+	justify-self: center;
+	text-align: center;
+	width: fit-content;
+}
+/* {timer321} */
+.start__timer {
+	font-size: 6.4rem;
+	justify-self: center;
+	align-self: center;
+	transition: all 0.3s ease-out;
+	font-weight: 600;
+	color: var(--color-tertiary);
+}
+.start__timer--transform {
+	transform: scale(1.4) translateY(-10px) translateZ(0);
+}
